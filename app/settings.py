@@ -129,4 +129,6 @@ BOWER_INSTALLED_APPS = [
 ]
 INSTALLED_APPS += [
     'djangobower',      # django-bower
+    'blogs',            # sample
 ]
+ALLOWED_HOSTS += ['devserver', ]
