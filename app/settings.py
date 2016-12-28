@@ -127,8 +127,14 @@ BOWER_INSTALLED_APPS = [
     'bootstrap',
     'trumbowyg',
 ]
+from django.conf import global_settings
+STATICFILES_FINDERS = global_settings.STATICFILES_FINDERS + [
+    'djangobower.finders.BowerFinder',
+]
 INSTALLED_APPS += [
     'djangobower',      # django-bower
+    'wyg',              # trumbowyg tool
     'blogs',            # sample
 ]
 ALLOWED_HOSTS += ['devserver', ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
